@@ -1,0 +1,46 @@
+
+ <ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" >Welcome to Dance Studio</a>
+  </li>
+  
+</ul> 
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+<h3 align="center">User Login</h3>
+
+<form id="form_login" (ngSubmit)="onSubmit(loginform)" #loginform="ngForm">
+<div class="form-group" class="form-group row">
+    <div class="col-xs-2">
+  <label for="userName">User Name:</label>
+  <input type="text" class="form-control" id="userName" name="userName" #userName="ngModel" [(ngModel)]="log.userName" required pattern="[A-Za-z]{3,12}">
+<div [hidden]="userName.valid || userName.pristine" class="alert alert-danger">username is invalid</div>
+</div>
+</div>
+<div class="form-group" class="form-group row">
+    <div class="col-xs-2">
+  <label for="password">Password:</label>
+  <input type="password" class="form-control" id="password" name="password" #password="ngModel" [(ngModel)]="log.password" required  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+  <div [hidden]="password.valid || password.pristine" class="alert alert-danger">Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters</div> 
+</div>
+</div>
+<button type="submit" [disabled]="!loginform.valid" class="btn btn-primary">Submit</button>
+</form>
+
+
+
+<footer>
+  <div class="copyright">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12">
+                  <p>Copyright © 2019 All Right Reserved.| Created By - Capgemini Technology Services India</p>
+              </div>
+          </div>
+      </div>
+  
+  </div>
+  
+  
+  </footer>
+

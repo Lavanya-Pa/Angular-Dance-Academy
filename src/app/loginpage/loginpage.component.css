@@ -1,0 +1,30 @@
+#form_login {
+    left: 68%;
+    top: 68%;
+    margin-left: -25%;
+    position: absolute;
+    margin-top: -18%;
+}
+
+#reg
+{
+    left: 68%;
+    top: 108%;
+    margin-left: -25%;
+    position: absolute;
+    margin-top: -25%;
+}
+
+footer {
+    background: #262626;
+    padding-top: 30px;
+    color: #fff;
+    font-family: 'Roboto Slab', serif;
+    margin-top: 420px;
+}
+.copyright {
+    text-align: center;
+    color: #fff;
+    background: #161616;
+    padding: 15px;
+} 

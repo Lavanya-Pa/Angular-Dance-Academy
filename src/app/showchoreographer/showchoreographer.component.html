@@ -1,0 +1,54 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" >Welcome to Dance Studio</a>
+  </li>
+  
+</ul> 
+<div class="container ">
+    <h4 align="centre">Search</h4><input type="text" name="Search" [(ngModel)]="filterData">
+
+  <h2>Choreographers List</h2>
+  <table class="table table-striped">
+      <tr>
+        <td>#</td>
+        <td>Choreographer Id</td>
+        <td>Choreographer Name</td>
+        <td>Choreographer Age</td>
+        <td>Choreographer Location</td>
+        <td>Dance Forms</td>
+        <td>Session</td>
+        <td>Price Table</td>
+        <td colspan="2">Action</td>
+      </tr>
+    <!----------------- Using *ngFor----------------------->
+    <tr *ngFor="let choreo of choreoList | filter:filterData ;let i = index">
+      <td>{{i+1}}</td>
+      <td>{{choreo.id}}</td>
+      <td>{{choreo.name}}</td>
+      <td>{{choreo.age}}</td>
+      <td>{{choreo.location}}</td>
+      <td>{{choreo.danceforms}}</td>
+      <td>{{choreo.session}}</td>
+      <td>{{choreo.pricetable}}</td>
+      <td><button (click)="editChoreos(choreo)" class="btn btn-info">Edit</button></td>
+      <!-- <td><button class="btn btn-outline-danger"  (click)="delete(i)">Delete</button></td> -->
+      <td><button (click)="deleteChoreos(choreo.id)" class="btn btn-danger">Delete</button></td>
+    </tr>
+</table>
+</div>
+
+<footer>
+  <div class="copyright">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12">
+                  <p>Copyright © 2019 All Right Reserved.| Created By - Capgemini Technology Services India</p>
+              </div>
+          </div>
+      </div>
+  
+  </div>
+  
+  
+  </footer>
+

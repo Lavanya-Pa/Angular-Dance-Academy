@@ -1,0 +1,93 @@
+<nav class="jumbotron">
+  <button (click)="logOut()">Logout</button>
+  <h1 align="center">Welcome To Dance Academy</h1>
+
+</nav>
+<div>
+
+
+
+  <div class="container">
+    <h3 align="center">Location Of Dance Forms</h3>
+    <div class="form-group">
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" (click)="getLocations('bangalore')" name="loc" value="bangalore"
+          required [(ngModel)]="location" #loc="ngModel"  [(ngModel)]="booking.location">
+        <label class="form-check-label">
+          <h4>Bangalore</h4>
+        </label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="loc" (click)="getLocations('mumbai')" value="mumbai" required [(ngModel)]="location"
+          #loc="ngModel"  [(ngModel)]="booking.location">
+        <label class="form-check-label">
+          <h4>Mumbai</h4>
+        </label>
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="loc" (click)="getLocations('chennai')" value="chennai" required [(ngModel)]="location"
+          #loc="ngModel"  [(ngModel)]="booking.location">
+        <label class="form-check-label">
+          <h4>Chennai</h4>
+        </label>
+      </div>
+
+      <br>
+      <form  #bangalore="ngForm">
+        
+          <div class="form-group">
+              <label>Choreographers</label>
+              <select class="form-control" name="choreographers" id="choreographers"[(ngModel)]="booking.choreographers">
+                  <option>select</option>
+                  <option *ngFor="let ch of choreographers ">{{ch.name}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label>Dance Forms</label>
+                <select class="form-control" name="danceforms" [(ngModel)]="booking.danceforms">
+                    <option>select</option>
+                    <option *ngFor="let ch of choreographers ">{{ch.danceforms}}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                  <label>Session</label>
+                  <select class="form-control" name="session"  [(ngModel)]="booking.session">
+                      <option>select</option>
+                      <option  *ngFor="let ch of choreographers ">{{ch.session}}</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label>Price Table</label>
+                    <select class="form-control" name="pricetable"  [(ngModel)]="booking.pricetable">
+                        <option>select</option>
+                        <option  *ngFor="let ch of choreographers ">{{ch.pricetable}}</option>
+                    </select>
+                  </div> 
+                  
+
+
+          <button [disabled]=!bangalore.valid type="submit" (click)="addBookings()" class="btn btn-info">BookNow</button>
+        
+      </form>
+
+      
+
+
+    </div>
+  </div>
+  <footer>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Copyright © 2019 All Right Reserved.| Created By - Capgemini Technology Services India</p>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    
+    
+    </footer>

@@ -1,0 +1,13 @@
+footer {
+    background: #262626;
+    padding-top: 30px;
+    color: #fff;
+    font-family: 'Roboto Slab', serif;
+    margin-top: 80px;
+}
+.copyright {
+    text-align: center;
+    color: #fff;
+    background: #161616;
+    padding: 15px;
+} 

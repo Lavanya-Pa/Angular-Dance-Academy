@@ -1,0 +1,51 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" >Welcome to Dance Studio</a>
+  </li>
+  
+</ul> 
+<div class="container ">
+    <h4 align="centre">Search</h4><input type="text" name="Search" [(ngModel)]="filterData">
+  <h2>Bookings List</h2>
+  <table class="table table-striped">
+      <tr>
+        <td>#</td>
+        <td>Booking Id</td>
+        <td>User Name</td>
+        <td>Choreographer Location</td>
+        <td>Choreographer Name</td>
+        <td>Dance Forms</td>
+        <td>Session</td>
+        <td>Price Table</td>
+        <td>Action</td>
+      </tr>
+    <!----------------- Using *ngFor----------------------->
+    <tr *ngFor="let book of booking | filter:filterData ;let i = index">
+      <td>{{i+1}}</td>
+      <td>{{book.bookingId}}</td>
+      <td>{{book.userName}}</td>
+      <td>{{book.location}}</td>
+      <td>{{book.choreographers}}</td>
+      <td>{{book.danceforms}}</td>
+      <td>{{book.session}}</td>
+      <td>{{book.pricetable}}</td>
+      <!-- <td><button class="btn btn-outline-danger"  (click)="getUserBookings()">Delete</button></td> -->
+      <td><button (click)="deleteBookings(book.bookingId)" class="btn btn-danger">Delete</button></td>
+    </tr>
+</table>
+</div>
+
+<footer>
+  <div class="copyright">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12">
+                  <p>Copyright © 2019 All Right Reserved.| Created By - Capgemini Technology Services India</p>
+              </div>
+          </div>
+      </div>
+  
+  </div>
+  
+  
+  </footer>
